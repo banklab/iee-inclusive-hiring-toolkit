@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IEE Inclusive Hiring Toolkit</title>
+<meta name="description" content="Ready-to-use documents behind the fair and inclusive professorial hiring procedure of the Institute of Ecology and Evolution, University of Bern.">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1d2420;
+    --muted: #5e6862;
+    --line: #e3e1da;
+    --accent: #2f6b4f;
+    --accent-soft: #e7f0ea;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141816;
+      --surface: #1b201d;
+      --text: #e7ebe8;
+      --muted: #9aa59f;
+      --line: #2c332f;
+      --accent: #7fc19f;
+      --accent-soft: #1f2d25;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  header.top { padding: 72px 0 40px; }
+  .kicker { font-size: 14px; letter-spacing: .04em; color: var(--muted); margin: 0 0 12px; }
+  h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -.02em; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 640px; margin: 0 0 28px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 11px 18px; border-radius: 999px; text-decoration: none;
+    font-weight: 600; font-size: 15px; border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn.ghost { color: var(--accent); }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px;
+    background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin: 8px 0 64px; }
+  .stat { background: var(--surface); padding: 18px 16px; }
+  .stat b { display: block; font-size: 26px; line-height: 1.2; }
+  .stat span { font-size: 14px; color: var(--muted); }
+
+  h2 { font-size: 26px; margin: 0 0 8px; letter-spacing: -.01em; }
+  .section-intro { color: var(--muted); margin: 0 0 24px; }
+  section { margin-bottom: 64px; }
+
+  /* process strip */
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 8px; }
+  .flow a, .span-a {
+    display: block; text-decoration: none; color: var(--text); background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; font-size: 14px; line-height: 1.35;
+  }
+  .flow a:hover, .span-a:hover { border-color: var(--accent); }
+  .flow small, .span-a small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .letter { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+  .span-a { display: flex; gap: 12px; align-items: center; }
+  .span-a .letter { margin: 0; flex: none; }
+  @media (max-width: 640px) {
+    .flow { grid-template-columns: 1fr; }
+    .flow a { display: flex; gap: 12px; align-items: center; }
+    .flow .letter { margin: 0; flex: none; }
+  }
+
+  /* measures */
+  .measure { border-top: 1px solid var(--line); padding-top: 32px; scroll-margin-top: 16px; }
+  .measure h3 { font-size: 22px; margin: 0 0 4px; display: flex; gap: 12px; align-items: center; }
+  .measure h3 .letter { width: 32px; height: 32px; font-size: 16px; margin: 0; }
+  .measure .stage { color: var(--muted); font-size: 14px; margin: 0 0 16px 44px; }
+  .measure ul.points { margin: 0 0 20px; padding-left: 20px; }
+  .measure ul.points li { margin-bottom: 6px; }
+  .files { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .files li { display: flex; gap: 14px; align-items: baseline; padding: 12px 16px; border-top: 1px solid var(--line); }
+  .files li:first-child { border-top: 0; }
+  .files .code { font-weight: 700; color: var(--accent); min-width: 26px; font-size: 14px; }
+  .files .body { flex: 1; min-width: 0; }
+  .files .name { font-weight: 600; text-decoration: none; color: var(--text); }
+  .files a.name:hover { color: var(--accent); text-decoration: underline; }
+  .files .desc { display: block; color: var(--muted); font-size: 15px; }
+  .files .meta { font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .files li.ext .code { color: var(--muted); }
+  .note { font-size: 15px; color: var(--muted); margin: 12px 0 0; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .two { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card p, .card ul { margin: 0; color: var(--muted); font-size: 16px; }
+  .card ul { padding-left: 18px; }
+  .card li { margin-bottom: 6px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 56px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <p class="kicker">Institute of Ecology and Evolution · University of Bern</p>
+    <h1>Inclusive Hiring Toolkit</h1>
+    <p class="lede">The documents behind our fair and inclusive procedure for two professorial searches in 2025. They are organised by stage, from sourcing candidates to the final interview, so that any unit can adopt or adapt the parts it needs.</p>
+    <div class="actions">
+      <a class="btn primary" href="IEE_Inclusive_Hiring_Toolkit.zip" download>Download all files (.zip)</a>
+      <a class="btn ghost" href="#measures">Browse the six measures</a>
+    </div>
+  </header>
+
+  <div class="stats" aria-label="The two searches at a glance">
+    <div class="stat"><b>2</b><span>tenure-track searches: Conservation Biology; Mathematical &amp; Computational Ecology</span></div>
+    <div class="stat"><b>200+</b><span>applications in total</span></div>
+    <div class="stat"><b>13</b><span>committee members per search, early-career researchers voting equally</span></div>
+    <div class="stat"><b>~20</b><span>candidates proactively scouted</span></div>
+    <div class="stat"><b>4.7/5</b><span>rating of the compulsory DEI training</span></div>
+  </div>
+
+  <section id="measures">
+    <h2>The procedure at a glance</h2>
+    <p class="section-intro">Five stages in sequence, held together by one set of explicit evaluation criteria.</p>
+    <nav class="flow" aria-label="Stages">
+      <a href="#b"><span class="letter">B</span><span>Diversity-aware sourcing<small>before the deadline</small></span></a>
+      <a href="#c"><span class="letter">C</span><span>Privilege-aware review<small>first round</small></span></a>
+      <a href="#d"><span class="letter">D</span><span>Bias-aware committee<small>discussion &amp; shortlist</small></span></a>
+      <a href="#e"><span class="letter">E</span><span>Structured interviews<small>two-day visit</small></span></a>
+      <a href="#f"><span class="letter">F</span><span>Candidate experience<small>throughout</small></span></a>
+    </nav>
+    <a class="span-a" href="#a"><span class="letter">A</span><span>Broadened, explicit evaluation criteria &amp; scoring<small>used at every stage</small></span></a>
+  </section>
+
+  <section class="measure" id="a">
+    <h3><span class="letter">A</span>Evaluation criteria &amp; scoring</h3>
+    <p class="stage">Used at every stage</p>
+    <ul class="points">
+      <li>A written score sheet (adapted from a University of Michigan template) rates scientific contribution, service, potential to enrich the institute's community, contribution to diversity, equity and inclusion, teaching and mentoring.</li>
+      <li>An explicit <em>“add for the IEE”</em> prompt asks which perspective, competence or experience a candidate would bring that the institute does not yet have. Evaluators also note career barriers a candidate may have faced.</li>
+      <li>Judgements are qualitative. No journal-based or other quantitative metrics are used, in line with DORA, CoARA and the Better Science Initiative. Academic age and unequal starting opportunities are taken into account.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">A1</span><span class="body"><a class="name" href="toolkit/A_Evaluation_criteria_and_scoring/A1_Evaluation_score_sheet.xlsx" download>Evaluation score sheet</a><span class="desc">Criteria with example evidence, the “add for the IEE” field, and a grade counter</span></span><span class="meta">XLSX · 28 KB</span></li>
+      <li><span class="code">A2</span><span class="body"><a class="name" href="toolkit/A_Evaluation_criteria_and_scoring/A2_Overall_procedure.docx" download>Overall procedure</a><span class="desc">The full written procedure, from review groups to the shortlist</span></span><span class="meta">DOCX · 132 KB</span></li>
+      <li><span class="code">A3</span><span class="body"><a class="name" href="toolkit/A_Evaluation_criteria_and_scoring/A3_Hiring_process_description.docx" download>Hiring process description</a><span class="desc">Write-up presented at the faculty meeting (German &amp; English)</span></span><span class="meta">DOCX · 40 KB</span></li>
+    </ul>
+  </section>
+
+  <section class="measure" id="b">
+    <h3><span class="letter">B</span>Diversity-aware sourcing</h3>
+    <p class="stage">Before the application deadline</p>
+    <ul class="points">
+      <li>Before the deadline, we actively scouted potential candidates from underrepresented groups and recorded them in a shared list. Deliberate outreach broadened the pool, instead of leaving it to whoever happened to apply.</li>
+      <li>Around 20 candidates were approached across the two searches.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">B1</span><span class="body"><a class="name" href="toolkit/B_Diversity_aware_sourcing/B1_Scouting_list_template.xlsx" download>Scouting list template</a><span class="desc">Name, institution, contact, who reaches out, why chosen, notes</span></span><span class="meta">XLSX · 16 KB</span></li>
+    </ul>
+    <p class="note">The completed scouting list is withheld for data-protection reasons.</p>
+  </section>
+
+  <section class="measure" id="c">
+    <h3><span class="letter">C</span>Privilege-aware initial review</h3>
+    <p class="stage">First review round only</p>
+    <ul class="points">
+      <li>We extended the “Lausanne model”, in which women and men are first reviewed in separate groups, with a third group: candidates who grew up with comparatively few academic and economic opportunities.</li>
+      <li>This group is defined transparently from Human Development Index scores (1990) and research capacity (PhD-level researchers per million inhabitants).</li>
+      <li>The grouping applies only in the first round. There are no quotas on the shortlist or in any later step. The committee also pledges to attend to intersecting dimensions such as disability, racialisation and LGBTQ+ identity.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">C1</span><span class="body"><a class="name" href="toolkit/C_Privilege_aware_initial_review/C1_Country_categories.xlsx" download>Country categories</a><span class="desc">HDI and R&amp;D data with the resulting opportunity categories</span></span><span class="meta">XLSX · 800 KB</span></li>
+    </ul>
+  </section>
+
+  <section class="measure" id="d">
+    <h3><span class="letter">D</span>Bias-aware committee process</h3>
+    <p class="stage">Individual review, discussion and shortlist</p>
+    <ul class="points">
+      <li>Each 13-person committee includes professors (1–2 from other institutes), Mittelbau members and early-career researchers, all with equal votes.</li>
+      <li>Every member completes two half-days of DEI / anti-bias training and an orientation on process, confidentiality and data protection.</li>
+      <li>Conflicts of interest are declared on a five-level scale, and the closest ties exclude a member from that candidate. Each application is read by three people, including at least one professor and one early-career researcher.</li>
+      <li>A trained, neutral moderator leads the all-day discussion. Speaking order runs from the lowest to the highest conflict-of-interest level and career stage.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">D1</span><span class="body"><a class="name" href="toolkit/D_Bias_aware_committee_process/D1_Conflict_of_interest_levels.docx" download>Conflict-of-interest levels</a><span class="desc">The five-level declaration scale (0–4) and how it is used</span></span><span class="meta">DOCX · 20 KB</span></li>
+      <li><span class="code">D2</span><span class="body"><a class="name" href="toolkit/D_Bias_aware_committee_process/D2_Orientation_slides.pdf">Orientation slides</a><span class="desc">Process, timeline, rights and duties, the review-group pledge, data security</span></span><span class="meta">PDF · 76 KB</span></li>
+      <li class="ext"><span class="code">D3</span><span class="body"><a class="name" href="https://www.bontu-guschke.com/" rel="noopener">DEI / anti-bias training</a><span class="desc">Two modules by Dr. Bontu Lucie Guschke: racism at universities (structural, interactional and intersectional perspectives), and meritocracy, excellence and bias blockers. Contact the trainer for materials.</span></span><span class="meta">External</span></li>
+      <li class="ext"><span class="code">D4</span><span class="body"><span class="name">Inclusive-meeting guide</span><span class="desc">An adopted third-party reference on inclusive-meeting good practice; not redistributed here</span></span><span class="meta">Reference</span></li>
+      <li><span class="code">D5</span><span class="body"><a class="name" href="toolkit/D_Bias_aware_committee_process/D5_Good_practices_one_pager.docx" download>Good-practice one-pager</a><span class="desc">Short guidance for committee members on fairness, confidentiality, bias and communication</span></span><span class="meta">DOCX · 24 KB</span></li>
+    </ul>
+  </section>
+
+  <section class="measure" id="e">
+    <h3><span class="letter">E</span>Structured interviews</h3>
+    <p class="stage">Two-day on-site visit</p>
+    <ul class="points">
+      <li>Every candidate completes the same standardised teaching assignment (see F3).</li>
+      <li>Interviewers use a pre-agreed set of questions, identical for all candidates within a search, and a structured evaluation tool. Judgements then rest on consistent evidence rather than gut feeling.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">E1</span><span class="body"><a class="name" href="toolkit/E_Structured_interviews/E1_Structured_interview_questions_MCE.docx" download>Interview questions (Mathematical &amp; Computational Ecology)</a><span class="desc">13 questions on research, collaboration, teaching, mentoring, DEI and infrastructure</span></span><span class="meta">DOCX · 24 KB</span></li>
+      <li><span class="code">E2</span><span class="body"><a class="name" href="toolkit/E_Structured_interviews/E2_Structured_interview_questions_ConBio.docx" download>Interview questions (Conservation Biology)</a><span class="desc">The same structure, adapted to the field</span></span><span class="meta">DOCX · 24 KB</span></li>
+      <li><span class="code">E3</span><span class="body"><a class="name" href="toolkit/E_Structured_interviews/E3_Interview_evaluation_tool.xlsx" download>Interview evaluation tool</a><span class="desc">One sheet per candidate: rating and evidence for each criterion</span></span><span class="meta">XLSX · 72 KB</span></li>
+    </ul>
+  </section>
+
+  <section class="measure" id="f">
+    <h3><span class="letter">F</span>Inclusive candidate experience</h3>
+    <p class="stage">From invitation to feedback</p>
+    <ul class="points">
+      <li>Candidates get early, transparent information about format, expectations and logistics. They are explicitly invited to share any needs: accessibility, dietary requirements, prayer or lactation rooms, all-gender toilets.</li>
+      <li>Name tags show names and roles. A welcome pack gives directions, and candidates can view the interview rooms beforehand. Travel, accommodation and visa costs are covered, and international candidates are met on arrival.</li>
+      <li>The audience and committees are reminded of common biases and asked to engage with every candidate. All institute members can feed back to the committee through their status group.</li>
+    </ul>
+    <ul class="files">
+      <li><span class="code">F1</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F1_Email_Invitation.docx" download>Invitation</a><span class="desc">Shortlist notification, format overview and a first request for personal needs</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F2</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F2_Email_Detailed_info_and_needs.docx" download>Detailed information &amp; needs</a><span class="desc">Talk and interview format, information request, travel arrangements</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F3</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F3_Email_Teaching_assignment.docx" download>Teaching assignment</a><span class="desc">The standardised 10-minute teaching segment, identical for all</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F4</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F4_Email_Interview_agenda.docx" download>Interview agenda</a><span class="desc">Agenda cover note: room tour, dress code, food, equipment</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F5</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F5_Email_Welcome_pack.docx" download>Welcome pack &amp; directions</a><span class="desc">Arrival, expenses, presentations, breaks, building access</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F6</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F6_Email_Information_for_institute.docx" download>Information for the institute</a><span class="desc">Symposium announcement and a call for committee members and volunteers</span></span><span class="meta">DOCX · 16 KB</span></li>
+      <li><span class="code">F7</span><span class="body"><a class="name" href="toolkit/F_Inclusive_candidate_communication/F7_Email_Feedback_by_status_group.docx" download>Feedback by status group</a><span class="desc">How every institute member can channel feedback, with a reminder about bias</span></span><span class="meta">DOCX · 12 KB</span></li>
+    </ul>
+    <p class="note">All candidate data has been removed. Placeholders in [BRACKETS] mark what to fill in.</p>
+  </section>
+
+  <section>
+    <h2>Using the toolkit</h2>
+    <p class="section-intro">What we learned, and how to make it your own.</p>
+    <div class="two">
+      <div class="card">
+        <h3>What we would refine</h3>
+        <ul>
+          <li>The review grouping simplifies a messy reality. It foregrounds gender and economic opportunity, so racialisation, disability and their intersections have to be carried by training and conscious discussion.</li>
+          <li>Recording candidates' career barriers consistently.</li>
+          <li>Keeping DEI awareness fresh over a months-long process.</li>
+          <li>Communicating decisions transparently to the many strong applicants who are not shortlisted.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Adapting it</h3>
+        <ul>
+          <li>Each document stands on its own. Start with the measure that fits your next search.</li>
+          <li>The score sheet and interview questions are easy to adjust for other disciplines.</li>
+          <li>We are glad to share our experience, including what we would do differently, and to compare notes. Contact Prof. Dr. Claudia Bank, Executive Director of the IEE: claudia.bank[@]unibe.ch.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Institute of Ecology and Evolution (IEE), University of Bern. These are the documents from the 2025 searches, with personal data removed. The completed scouting list and third-party training materials are not published.
+  </div>
+</footer>
+
+</body>
+</html>
