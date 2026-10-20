@@ -18,7 +18,7 @@ The files in [`toolkit/`](toolkit) are organised by measure:
 All personal and candidate data has been removed. The completed scouting list and third-party
 training materials are not included.
 
-Contact: Prof. Dr. Claudia Bank, Executive Director of the IEE.
+Contact: Prof. Dr. Claudia Bank
 
 ## License
 
