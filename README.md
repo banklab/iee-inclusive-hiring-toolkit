@@ -29,6 +29,6 @@ you may share and adapt them for any purpose, provided you give appropriate cred
 Suggested attribution: *IEE Inclusive Hiring Toolkit, Institute of Ecology and Evolution,
 University of Bern (CC BY 4.0), https://banklab.github.io/iee-inclusive-hiring-toolkit/*
 
-The evaluation score sheet (A1) and the interview evaluation tool (E3) are adapted from
+The evaluation score sheet (A1) and the interview evaluation tool (E2) are adapted from
 University of Michigan templates; any material taken from those templates remains subject to its
 original terms.
